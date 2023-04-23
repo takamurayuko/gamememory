@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 use App\Http\Controllers\UserController;
-Route::controller(UserController::class)->group(function() {
-    Route::get('user/index', 'index');
+Route::controller(UserController::class)->middleware('auth')->group(function() {
+    Route::get('/', 'index')->middleware('auth');
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+URL::forceScheme('https');
+
