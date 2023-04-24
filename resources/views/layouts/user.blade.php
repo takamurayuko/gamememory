@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- CSRF Token -->
          {{-- 後の章で説明します --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -78,7 +77,30 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-
+            <!--ここからメニュー-->
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Detail</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="toggle-btn">
+                    <span></span>
+                    <Span></Span>
+                    <span></span>
+                </div>
+                
+                <div id="mask"></div>
+                
+            </div>
+            
+             {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
+            <script src="{{ secure_asset('js/app.js') }}" defer></script>
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
