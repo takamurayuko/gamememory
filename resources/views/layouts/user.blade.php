@@ -25,6 +25,12 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/user.css') }}" rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"
+        />
     </head>
     <body>
         <div id="app">
@@ -78,29 +84,42 @@
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <!--ここからメニュー-->
-            <div id="navArea">
-                <nav>
-                    <div class="inner">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Detail</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                
-                <div class="toggle-btn">
-                    <span></span>
-                    <Span></Span>
-                    <span></span>
-                </div>
-                
-                <div id="mask"></div>
-                
+             <!-- toggle section -->
+            <input type="checkbox" id="check" />
+            <label for="check">
+              <i class="fas fa-bars" id="btn"></i>
+              <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <!-- sidebar section -->
+            <div class="sidebar">
+              <ul>
+                <li>
+                  <a href="#">プラットフォーム</a>
+                </li>
+                <li>
+                  <a href="#">ジャンル</a>
+                </li>
+                <li>
+                  <a href="#">123</a>
+                </li>
+                <li>
+                  <a href="#"></i>456</a>
+                </li>
+                <li>
+                  <a href="#">></i>789</a>
+                </li>
+                <li>
+                  <a href="#">11112</a>
+                </li>
+                <li>
+                  <a href="#">100000</a>
+                </li>
+              </ul>
             </div>
-            
-             {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
-            <script src="{{ secure_asset('js/app.js') }}" defer></script>
+        
+            <section></section>
+                    </div>
+    
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
