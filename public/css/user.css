@@ -7,6 +7,51 @@ body {
   font-weight: 400;
 }
 
+.navbar-laravel {
+  background-color: #7fbfff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin-top: 0;
+}
+
+.navbar-brand {
+  color: #000 !important;
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.table-dark {
+  color: #000;
+}
+
+.list-group-item {
+  border-color: #000;
+  background-color: #7fbfff;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.login-header {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-body {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  color: #000;
+  border-color: #000;
+  background-color: #7fbfff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +59,33 @@ body {
   list-style: none;
   text-decoration: none;
   font-family: "M PLUS 1p", sans-serif;
+}
+
+.sidebar ul li:first-child {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul li:first-child input[type=text] {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul li:not(:first-child) a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 30px;
+  transition: 0.4s;
 }
 
 .sidebar {
@@ -24,6 +96,7 @@ body {
   width: 250px;
   height: 100%;
   transition: all 0.5s;
+  margin-top: 0;
 }
 
 .sidebar ul a {
@@ -38,7 +111,7 @@ body {
 }
 
 ul li:hover a {
-  padding-left: 50px;
+  padding-left: 30px;
 }
 
 .sidebar ul a i {
@@ -68,7 +141,6 @@ label #btn {
 
 label #cancel {
   z-index: 10;
-  /* left: 195px; 見やすいように最初はこれ*/
   left: -195px;
   top: 17px;
   font-size: 30px;
@@ -100,46 +172,6 @@ section {
   transition: all 0.5s;
 }
 
-.navbar-laravel {
-  background-color: #f5f5f5;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.navbar-brand {
-  color: #000 !important;
-}
-
-.nav-link {
-  color: #000 !important;
-}
-
-.table-dark {
-  color: #000;
-}
-
-.list-group-item {
-  border-color: #000;
-  background-color: #f5f5f5;
-}
-
-.login-box {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.login-header {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.login-body {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.list-group-item {
-  color: #000;
-  border-color: #000;
-  background-color: #f5f5f5;
+.sidebar ul li:not(:first-child) a:hover {
+  padding-left: 30px;
 }

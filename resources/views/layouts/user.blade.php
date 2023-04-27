@@ -23,7 +23,7 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- この章の後半で作成するCSSを読み込みます --}}
+        {{-- この章の後半で作成するCSSを読み込みます(user.scss)        --}}
         <link href="{{ secure_asset('css/user.css') }}" rel="stylesheet">
         <link
         rel="stylesheet"
@@ -38,7 +38,7 @@
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Gamememory') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -92,34 +92,34 @@
             </label>
             <!-- sidebar section -->
             <div class="sidebar">
-              <ul>
-                <li>
-                  <a href="#">プラットフォーム</a>
-                </li>
-                <li>
-                  <a href="#">ジャンル</a>
-                </li>
-                <li>
-                  <a href="#">123</a>
-                </li>
-                <li>
-                  <a href="#"></i>456</a>
-                </li>
-                <li>
-                  <a href="#">></i>789</a>
-                </li>
-                <li>
-                  <a href="#">11112</a>
-                </li>
-                <li>
-                  <a href="#">100000</a>
-                </li>
-              </ul>
+                <ul>
+                    <li>
+                        <input type="text" placeholder="Search...">
+                    </li>     
+                    <li>
+                        <a href="#">プラットフォーム</a>
+                    </li>
+                    <li>
+                        <a href="#">ジャンル</a>
+                    </li>
+                    <li>
+                        <a href="#">123</a>
+                    </li>
+                    <li>
+                        <a href="#"></i>456</a>
+                    </li>
+                    <li>
+                        <a href="#">></i>789</a>
+                    </li>
+                    <li>
+                        <a href="#">11112</a>
+                    </li>
+                    <li>
+                        <a href="#">100000</a>
+                    </li>
+                </ul>
             </div>
-        
-            <section></section>
-                    </div>
-    
+            <!--<section></section>-->
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
