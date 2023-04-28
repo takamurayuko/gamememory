@@ -47,7 +47,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
-
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -92,9 +91,12 @@
             </label>
             <!-- sidebar section -->
             <div class="sidebar">
+                <div class="register">
+                    <a href="#">新規登録</a>
+                </div>
                 <ul>
                     <li>
-                        <input type="text" placeholder="Search...">
+                        <input type="text" placeholder="タイトル検索">
                     </li>     
                     <li>
                         <a href="#">プラットフォーム</a>
