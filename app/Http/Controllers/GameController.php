@@ -8,12 +8,12 @@ use App\Models\Game;
 
 class GameController extends Controller
 {
-    //  public function create(Request $request)
-    // {
-    //     return view('user.create');
-    // }
+     public function create(Request $request)
+    {
+        return view('user.create');
+    }
     
-    public function create(Request $request)
+    /*public function create(Request $request)
     {
         // 以下を追記
         // Validationを行う
@@ -40,7 +40,7 @@ class GameController extends Controller
         $games->save();
 
         return view('user.create');
-    }
+    }*/
 }
     
 

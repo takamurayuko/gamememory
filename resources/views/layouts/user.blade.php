@@ -92,7 +92,7 @@
             <!-- sidebar section -->
             <div class="sidebar">
                 <div class="register">
-                    <a href="#">新規登録</a>
+                    <a href="{{ route('user.create') }}">新規登録</a>
                 </div>
                 <ul>
                     <li>
