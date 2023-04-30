@@ -45,14 +45,14 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
+                         <!--Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                         </ul>
 
-                        <!-- Right Side Of Navbar -->
+                         <!--Right Side Of Navbar -->
                         <ul class="navbar-nav">
                                {{-- 以下を追記 --}}
-                        <!-- Authentication Links -->
+                         <!--Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
@@ -99,26 +99,58 @@
                         <input type="text" placeholder="タイトル検索">
                     </li>     
                     <li>
-                        <a href="#">プラットフォーム</a>
+                        <div class="genre">ジャンル</div>
                     </li>
+                    <div class="genre_name a">
+                        <li>
+                            <a href="#">ＲＰＧ</a>
+                        </li>
+                        <li>
+                            <a href="#">アクション</a>
+                        </li>
+                        <li>
+                            <a href="#">シミュレーション</a>
+                        </li>
+                        <li>
+                            <a href="#">アドベンチャー</a>
+                        </li>
+                        <li>
+                            <a href="#">シューティング</a>
+                        </li>
+                        <li>
+                            <a href="#">レーシング</a>
+                        </li>
+                        <li>
+                            <a href="#">パズル</a>
+                        </li>
+                        <li>
+                            <a href="#">音楽</a>
+                        </li>
+                        <li>
+                            <a href="#">その他</a>
+                        </li>
+                    </div> 
+                    
                     <li>
-                        <a href="#">ジャンル</a>
+                        <div class="machine">プラットフォーム</div>
                     </li>
-                    <li>
-                        <a href="#">123</a>
-                    </li>
-                    <li>
-                        <a href="#"></i>456</a>
-                    </li>
-                    <li>
-                        <a href="#">></i>789</a>
-                    </li>
-                    <li>
-                        <a href="#">11112</a>
-                    </li>
-                    <li>
-                        <a href="#">100000</a>
-                    </li>
+                    <div class="genre_name a">
+                        <li>
+                            <a href="#">Nintendo Swich</a>
+                        </li>
+                        <li>
+                            <a href="#">ＰＳ４/ＰＳ５</a>
+                        </li>
+                        <li>
+                            <a href="#">Ｘｂｏｘ</a>
+                        </li>
+                        <li>
+                            <a href="#">ＰＣ</a>
+                        </li>
+                        <li>
+                            <a href="#">その他</a>
+                        </li>
+                    </div>    
                 </ul>
             </div>
             <!--<section></section>-->

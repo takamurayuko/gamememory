@@ -109,13 +109,12 @@ select.form-control {
 
 .sidebar ul li:first-child {
   margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 .sidebar ul li:first-child input[type="text"] {
   width: 90%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 8px;
   border: none;
   border-radius: 5px;
   background-color: #fff;
@@ -123,16 +122,16 @@ select.form-control {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar ul li:not(:first-child) a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  line-height: 65px;
-  font-size: 18px;
-  color: #fff;
-  padding-left: 30px;
-  transition: 0.4s;
-}
+// .sidebar ul li:not(:first-child) a {
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   line-height: 65px;
+//   font-size: 18px;
+//   color: #fff;
+//   padding-left: 30px;
+//   transition: 0.4s;
+// }
 
 .sidebar {
   position: fixed;
@@ -145,22 +144,22 @@ select.form-control {
   margin-top: 0;
 }
 
-.sidebar ul a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  line-height: 65px;
-  font-size: 18px;
-  color: #fff;
-  padding-left: 0px;
-  // border-top: 1px solid rgba(255, 255, 255, 0.1);
-  // border-bottom: 1px solid black;
-  transition: 0.4s;
-}
+// .sidebar ul a {
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   line-height: 65px;
+//   font-size: 18px;
+//   color: #fff;
+//   padding-left: 0px;
+//   // border-top: 1px solid rgba(255, 255, 255, 0.1);
+//   // border-bottom: 1px solid black;
+//   transition: 0.4s;
+// }
 
-ul li:hover a {
-  padding-left: 30px;
-}
+// ul li:hover a {
+//   padding-left: 30px;
+// }
 
 .sidebar ul a i {
   margin-right: 16px;
@@ -180,10 +179,10 @@ label #cancel {
 
 label #btn {
   left: 40px;
-  top: 25px;
+  top: 20px;
   font-size: 25px;
   color: #fff;
-  padding: 6px 12px;
+  padding: 4px 9px;
   transition: all 0.5s;
   outline: 2px solid #fff;
 }
@@ -194,7 +193,7 @@ label #cancel {
   top: 17px;
   font-size: 30px;
   color: #fff;
-  padding: 4px 9px;
+  padding: 3px 10px;
   transition: all 0.5s;
   outline: 2px solid #fff;
 }
@@ -210,7 +209,7 @@ label #cancel {
 }
 
 #check:checked ~ label #cancel {
-  left: 195px;
+  left: 220px;
 }
 
 #check:checked ~ section {
@@ -222,19 +221,19 @@ section {
   transition: all 0.5s;
 }
 
-.sidebar ul li:not(:first-child) a:hover {
-  padding-left: 30px;
-}
+// .sidebar ul li:not(:first-child) a:hover {
+//   padding-left: 30px;
+// }
 
 .register {
   background-color: #3c6fc9;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   margin-left: 10px;
   margin-right: 10px;
   position: relative;
@@ -242,12 +241,11 @@ section {
 
 .register a {
   color: white;
-  text-decoration: none;
 }
 
-.register a:hover {
-  text-decoration: underline;
-}
+// .register a:hover {
+//   text-decoration: underline;
+// }
 
 .register:before {
   content: '';
@@ -260,4 +258,43 @@ section {
   z-index: -1;
 }
 
+.machine {
+  background-color: #3c6fc9;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 35px;
+  position: relative;
+}
+
+.genre {
+  background-color: #3c6fc9;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 35px;
+  position: relative;
+}
+
+.genre_name a {
+  color: white;
+  font-size: 15px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.genre_name a:hover{
+  padding-left: 30px;
+  transition: 0.4s;
+}
 //ここまでメニュー
