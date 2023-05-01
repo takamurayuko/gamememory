@@ -14,4 +14,9 @@ class Genre extends Model
     {
         return $this->hasMany(Game::class);
     }
+     // ジャンルのリストを定義
+    public static $genre_list = [
+        'RPG', 'アクション', 'シミュレーション', 'アドベンチャー',
+        'シューティング', 'レーシング', 'パズル', '音楽', 'その他'
+    ];
 }

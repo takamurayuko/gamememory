@@ -19,14 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 Route::controller(UserController::class)/*->prefix('user')->name('user')*/->middleware('auth')->group(function() {
-    Route::get('/', 'index')->name('user.index');
+    Route::get('/', 'index')->name('user.index');//ホーム画面
 });
 
 use App\Http\Controllers\GameController;
 Route::controller(GameController::class)->middleware('auth')->group(function() {
-     Route::post('/create', 'create')->name('user.create');
-     Route::get('/edit', 'edit')->name('user.edit');
-     Route::get('/show/{id}', 'show')->name('user.show');
+     Route::get('/create', 'add')->name('user.add');//新規作成画面
+     Route::post('/create', 'store')->name('user.create');//新規作成処理
+     Route::get('/edit/{id}', 'edit')->name('user.edit');//編集画面
+     Route::post('/edit', 'update')->name('user.update');//編集処理
+     Route::get('/show/{id}', 'show')->name('user.show');//詳細画面
 });
 
 Auth::routes();

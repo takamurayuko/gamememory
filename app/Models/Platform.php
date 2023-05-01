@@ -13,5 +13,12 @@ class Platform extends Model
     {
         return $this->hasMany(Game::class);
     }
-    
+    //機種リスト
+    public static $platform_list = [
+        'Nintendo Switch',
+        'PS4/PS5',
+        'Xbox',
+        'PC',
+        'その他',
+    ];
 }

@@ -20,7 +20,7 @@ class Game extends Model
         return $this->belongsTo(User::class);
     }
     
-        public function genre()
+    public function genre()
     {
         return $this->belongsTo(Genre::class);
     }

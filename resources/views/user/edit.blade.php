@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>記事編集</h2>
-                <form action="{{ route('game.update') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user.update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -21,15 +21,29 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">ジャンル</label>
+                        <label class="col-md-2" for="genre_name">ジャンル</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="genre_name" value="{{ $game_form->genre_name }}">
+                            <select class="form-control" name="genre_name">
+                                <option value="">選択してください</option>
+                                @foreach (App\Models\Genre::$genre_list as $genre)
+                                    <option value="{{ $genre }}" {{ old('genre_name', $game_form->genre_name ?? '') == $genre ? 'selected' : '' }}>
+                                        {{ $genre }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">機種</label>
+                    <label class="col-md-2">機種</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="machine_name" value="{{ $game_form->machine_name }}">
+                            <select name="platform_name" class="form-control">
+                                <option value="">選択してください</option>
+                                @foreach ($platforms as $platform)
+                                    <option value="{{ $platform }}" {{ $game_form->platform_name == $platform ? 'selected' : '' }}>
+                                        {{ $platform }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -53,7 +67,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="memo">メモ</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="memo" rows="20">{{ $news_form->memo }}</textarea>
+                            <textarea class="form-control" name="memo" rows="20">{{ $game_form->memo }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -61,7 +75,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $news_form->image_path }}
+                                設定中: {{ $game_form->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">

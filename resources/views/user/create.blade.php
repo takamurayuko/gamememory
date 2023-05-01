@@ -23,68 +23,64 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">ジャンル</label>
-                        <div class="col-md-10">
-                            <select name="genre_name" class="form-control">
-                                <option value="">選択してください</option>
-                                <option value="RPG">ＲＰＧ</option>
-                                <option value="アクション">アクション</option>
-                                <option value="シミュレーション">シミュレーション</option>
-                                <option value="アドベンチャー">アドベンチャー</option>
-                                <option value="シューティング">シューティング</option>
-                                <option value="レーシング">レーシング</option>
-                                <option value="パズル">パズル</option>
-                                <option value="音楽">音楽</option>
-                                <option value="その他">その他</option>
-                            </select>
+                            <div class="col-md-10">
+                                <select name="genre_name" class="form-control">
+                                    <option value="">選択してください</option>
+                                    @foreach (App\Models\Genre::$genre_list as $genre)
+                                        <option value="{{ $genre }}" {{ old('genre_name') == $genre ? 'selected' : '' }}>
+                                            {{ $genre }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
+                        <div class="form-group row">
                         <label class="col-md-2">機種</label>
-                        <div class="col-md-10">
-                            <select name="machine_name" class="form-control">
-                                <option value="">選択してください</option>
-                                <option value="Nintendo Swich">Ｎｉｎｔｅｎｄｏ Ｓｗｉｃｈ</option>
-                                <option value="PS4/PS5">ＰＳ４/ＰＳ５</option>
-                                <option value="Xbox">Ｘｂｏｘ</option>
-                                <option value="PC">ＰＣ</option>
-                                <option value="その他">その他</option>
-                            </select>
+                            <div class="col-md-10">
+                                <select name="platform_name" class="form-control">
+                                    <option value="">選択してください</option>
+                                    @foreach ($platforms as $platform)
+                                        <option value="{{ $platform }}" {{ old('platform_name') == $platform ? 'selected' : '' }}>
+                                            {{ $platform }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">プレイ開始日</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="start_date" value="{{ old('title') }}">
+                        <div class="form-group row">
+                            <label class="col-md-2">プレイ開始日</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="start_date" value="{{ old('title') }}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">プレイ終了日</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="end_date" value="{{ old('title') }}">
+                        <div class="form-group row">
+                            <label class="col-md-2">プレイ終了日</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="end_date" value="{{ old('title') }}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">ＵＲＬ</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="url" value="{{ old('title') }}">
+                        <div class="form-group row">
+                            <label class="col-md-2">ＵＲＬ</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="url" value="{{ old('title') }}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">メモ</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="memo" rows="20">{{ old('body') }}</textarea>
+                        <div class="form-group row">
+                            <label class="col-md-2">メモ</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" name="memo" rows="20">{{ old('body') }}</textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                        <div class="form-group row">
+                            <label class="col-md-2">画像</label>
+                            <div class="col-md-10">
+                                <input type="file" class="form-control-file" name="image">
+                            </div>
                         </div>
-                    </div>
-                    @csrf
-                    <input type="submit" class="btn btn-primary" value="登録">
-                </form>
+                        @csrf
+                        <input type="submit" class="btn btn-primary" value="登録">
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Game;
+use App\Models\Genre;
+use App\Models\Platform;
+use App\Models\Duration;
+
+use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    //  public function create(Request $request)
-    // {
-    //     return view('user.create');
-    // }
-    
      public function add()
     {
-        return view('user.create');
+        $genres = Genre::all();
+        $platforms = Platform::$platform_list;
+        
+        return view('user.create', compact('genres', 'platforms'));
     }
     
-    public function create(Request $request)
+    public function store(Request $request)
     {
         // Validationを行う
         $this->validate($request, Game::$rules);
@@ -43,7 +44,14 @@ class GameController extends Controller
         $games->fill($form);
         $games->save();
 
-        return redirect('/create');
+        return redirect('/');
+    }
+    
+    public function create()
+    {
+        $genres = Genre::all();
+    
+        return view('path.to.your.create.view', compact('genres'));
     }
     
      public function edit(Request $request)
@@ -53,8 +61,12 @@ class GameController extends Controller
         if (empty($game)) {
             abort(404);
         }
-        return view('user.edit', ['game_form' => $game]);
-    }
+        
+        $genres = Genre::all(); // ジャンルデータ取得
+        $platforms = Platform::$platform_list;//機種データ取得        
+
+        return view('user.edit', ['game_form' => $game, 'genres' => $genres, 'platforms' => $platforms]);
+    }    
     
     public function update(Request $request)
     {
@@ -98,14 +110,14 @@ class GameController extends Controller
      public function show($id)
     {
         // 各モデルからデータを取得
-        $game = Game::findOrFail($id);
-        $genre = Genre::find($game->genre_id);
+        $game = Game::with('genre')->findOrFail($id);
+        $genre = $game->genre;
         $platform = Platform::find($game->platform_id);
-        $playTime = Duration::find($game->durations_id);
+        $duration = Duration::find($game->durations_id); // Durationモデルからデータを取得
         $imagePath = $game->image_path; // 画像パスを取得
 
         // 取得したデータをビューに渡す
-        return view('show', compact('game', 'genre_name', 'machine_name', 'start_date', 'end_date'));
+        return view('user.show', compact('game', 'genre', 'platform', 'duration'));
     }
 }
     
