@@ -7,12 +7,13 @@
 {{-- user.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container_game">
-        @foreach ($games as $game)
-            <div>
-                <img src="{{ $game->image_path ? secure_asset('storage/image/'. $game->image_path) : secure_asset('storage/image/no_image.png') }}" alt="{{ $game->title }}" style="width: 200px; height: 200px;">
-                <h2>{{ $game->title }}</h2>
-            </div>
-        @endforeach
-            
+        <div class="game-grid">
+            @foreach ($games as $game)
+                <div class="game-card">
+                    <img src="{{ $game->image_path ? secure_asset('storage/image/'. $game->image_path) : secure_asset('storage/image/no_image.png') }}" alt="{{ $game->title }}" style="width: 350px; height: 350px;">
+                    <h2>{{ $game->title }}</h2>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

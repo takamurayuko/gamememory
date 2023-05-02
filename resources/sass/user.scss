@@ -296,5 +296,16 @@ section {
 //ここまでメニュー
 
 .container_game{
-  margin-left: 300px; /* 任意の数値に変更して、右にずらしたい距離を調整できる */
+  margin-left: 370px; //投稿記事の位置
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    width: 47%;
+    box-sizing: border-box;
+    padding: 20px;
 }

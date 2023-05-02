@@ -93,7 +93,7 @@ class GameController extends Controller
         // 該当するデータを上書きして保存する
         $game->fill($game_form)->save();
 
-        return redirect('/create');
+        return redirect('/');
     }
 
     public function delete(Request $request)
@@ -107,18 +107,15 @@ class GameController extends Controller
         return redirect('/create');
     }
     
-     public function show($id)
+    public function show($id)
     {
-        // 各モデルからデータを取得
-        $game = Game::with('genre')->findOrFail($id);
-        $genre = $game->genre;
-        $platform = Platform::find($game->platform_id);
-        $duration = Duration::find($game->durations_id); // Durationモデルからデータを取得
-        $imagePath = $game->image_path; // 画像パスを取得
-
-        // 取得したデータをビューに渡す
-        return view('user.show', compact('game', 'genre', 'platform', 'duration'));
+        $game = Game::find($id);
+        if (empty($game)) {
+            abort(404);
+        }
+        return view('user.show', compact('game'));
     }
+
 }
     
 

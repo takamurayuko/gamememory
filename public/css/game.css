@@ -255,7 +255,3 @@ section {
   padding-left: 30px;
   transition: 0.4s;
 }
-
-.container {
-  margin-left: 300px; /* 任意の数値に変更して、右にずらしたい距離を調整できる */
-}
