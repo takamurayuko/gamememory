@@ -27,7 +27,7 @@ class GameController extends Controller
         $games = new Game;
         $form = $request->all();
 
-        // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+        // フォームから画像が送信されてきたら、保存して、$games->image_path に画像のパスを保存する
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $games->image_path = basename($path);
@@ -72,23 +72,23 @@ class GameController extends Controller
     {
         // Validationをかける
         $this->validate($request, Game::$rules);
-        // News Modelからデータを取得する
+        //  Modelからデータを取得する
         $game = Game::find($request->id);
         // 送信されてきたフォームデータを格納する
         $game_form = $request->all();
 
         if ($request->remove == 'true') {
-            $news_form['image_path'] = null;
+            $game_form['image_path'] = null;
         } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
             $game_form['image_path'] = basename($path);
         } else {
-            $game_form['image_path'] = $news->image_path;
+            $game_form['image_path'] = $game->image_path;
         }
 
-        unset($news_form['image']);
-        unset($news_form['remove']);
-        unset($news_form['_token']);
+        unset($game_form['image']);
+        unset($game_form['remove']);
+        unset($game_form['_token']);
 
         // 該当するデータを上書きして保存する
         $game->fill($game_form)->save();
@@ -98,7 +98,7 @@ class GameController extends Controller
 
     public function delete(Request $request)
     {
-        // 該当するNews Modelを取得
+        // 該当する Modelを取得
         $game = Game::find($request->id);
 
         // 削除する

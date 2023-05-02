@@ -10,6 +10,11 @@ class Game extends Model
     use HasFactory;
     
     protected $guarded = array('id');
+    
+     protected $fillable = [
+        'title',
+        'image_path',
+    ];
 
     public static $rules = array(
         'title' => 'required',

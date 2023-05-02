@@ -20,10 +20,6 @@ body {
   color: #000 !important;
 }
 
-.navber {
-  --bs-navbar-padding-y: 0.8rem;
-}
-
 .table-dark {
   color: #000;
 }
@@ -258,4 +254,8 @@ section {
 .genre_name a:hover {
   padding-left: 30px;
   transition: 0.4s;
+}
+
+.container_game {
+  margin-left: 300px; /* 任意の数値に変更して、右にずらしたい距離を調整できる */
 }
