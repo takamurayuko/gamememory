@@ -300,12 +300,35 @@ section {
 }
 
 .game-grid {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .game-card {
-    width: 47%;
-    box-sizing: border-box;
-    padding: 20px;
+  width: 47%;
+  box-sizing: border-box;
+  padding: 20px;
 }
+
+.game-card a {
+    color: #606060;  // リンクの色
+}
+
+.game-card a:hover {
+    color: #606060;  // マウスが乗ったとき 
+}
+
+.game-card a:visited {
+    color: #606060;  // 訪れたリン
+}
+
+.container_show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  text-align: center;
+}
+
+

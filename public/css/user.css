@@ -270,3 +270,24 @@ section {
   box-sizing: border-box;
   padding: 20px;
 }
+
+.game-card a {
+  color: #606060;
+}
+
+.game-card a:hover {
+  color: #606060;
+}
+
+.game-card a:visited {
+  color: #606060;
+}
+
+.container_show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  text-align: center;
+}
