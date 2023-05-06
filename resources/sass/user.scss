@@ -328,7 +328,25 @@ section {
   justify-content: center;
   align-items: center;
   height: 75vh;
-  text-align: center;
 }
 
+.container_show img {
+  align-self: center;  // 画像だけ中央寄せにする
+}
+.text-container {
+  text-align: left;
+  width: 100%;
+  max-width: 300px; 
+}
 
+.edit-button {
+  display: inline-block;
+  background-color: #3c6fc9;
+  color: white;
+  font-size: 14px;
+  padding: 7px 18px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  float: right;
+}

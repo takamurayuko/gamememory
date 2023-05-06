@@ -9,6 +9,12 @@ class Duration extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'start_date',
+        'end_date',
+        'play_time',
+    ];
+    
         public function games()
     {
         return $this->hasMany(Game::class);

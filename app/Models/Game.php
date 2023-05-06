@@ -11,7 +11,7 @@ class Game extends Model
     
     protected $guarded = array('id');
     
-     protected $fillable = [
+    protected $fillable = [
         'title',
         'image_path',
     ];

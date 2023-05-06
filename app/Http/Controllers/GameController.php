@@ -26,7 +26,16 @@ class GameController extends Controller
 
         $games = new Game;
         $form = $request->all();
-
+        
+         // durationを作成して保存する
+        $duration = new Duration;
+        $duration->start_date = $form['start_date'];
+        $duration->end_date = $form['end_date'];
+        $duration->save();
+    
+        // Gameにdurationを関連付ける
+        $games->duration()->associate($duration);
+            
         // フォームから画像が送信されてきたら、保存して、$games->image_path に画像のパスを保存する
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
@@ -39,6 +48,9 @@ class GameController extends Controller
         unset($form['_token']);
         // フォームから送信されてきたimageを削除する
         unset($form['image']);
+         // start_dateとend_dateを削除する
+        unset($form['start_date']);
+        unset($form['end_date']);
 
         // データベースに保存する
         $games->fill($form);
@@ -77,7 +89,23 @@ class GameController extends Controller
         // 送信されてきたフォームデータを格納する
         $game_form = $request->all();
 
-        if ($request->remove == 'true') {
+        // durationを更新する
+        $duration = Duration::find($game->duration_id);
+       
+       if (!$duration) {
+            $duration = new Duration;
+            $duration->save();
+            $game->duration_id = $duration->id;
+            $game->save();
+        }
+       
+        $duration->start_date = $game_form['start_date'];
+        $duration->end_date = $game_form['end_date'];
+        $duration->save();
+           
+       
+        //画像処理
+        if ($requeSSst->remove == 'true') {
             $game_form['image_path'] = null;
         } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
@@ -89,6 +117,8 @@ class GameController extends Controller
         unset($game_form['image']);
         unset($game_form['remove']);
         unset($game_form['_token']);
+        unset($game_form['start_date']);
+        unset($game_form['end_date']);
 
         // 該当するデータを上書きして保存する
         $game->fill($game_form)->save();
