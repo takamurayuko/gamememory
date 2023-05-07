@@ -19,7 +19,14 @@ return new class extends Migration
             $table->string('url')->nullable();  // 任意のURLを保存するカラム
             $table->string('memo')->nullable();//任意のメモを保存
             $table->unsignedBigInteger('duration_id')->nullable(); // duration_idカラムの追加
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('platform_id')->nullable();
+            $table->unsignedBigInteger('genre_id')->nullable();
+            
             $table->foreign('duration_id')->references('id')->on('durations'); // 外部キー制約の追加
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('platform_id')->references('id')->on('platforms');
+            $table->foreign('genre_id')->references('id')->on('genres');
             $table->string('image_path')->nullable();
             $table->timestamps();
         });

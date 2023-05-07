@@ -9,9 +9,10 @@
         <div class="text-container">
             <h4>{{ $game->title }}</h4>
             <p>ジャンル: {{ $game->genre ? $game->genre->genre_name : '未設定' }}</p>
-            <p>機種: {{ $game->platform ? $game->platform->platform_name : '未設定' }}</p>
-            <p>プレイ開始日: {{ $game->start_date }}</p>
-            <p>プレイ終了日: {{ $game->end_date }}</p>
+            <p>機種: {{ $game->platform ? $game->platform->machine_name : '未設定' }}</p>
+            <p>プレイ開始日: {{ $game->duration ? $game->duration->start_date : '未設定' }}</p>
+            <p>プレイ終了日: {{ $game->duration ? $game->duration->end_date : '未設定' }}</p>
+            <p>プレイ時間: {{ $game->duration ? $game->duration->play_time : '未設定' }}</p>
             <p>ＵＲＬ: {{ $game->url }}</p>
             <p id="toggle-button">メモ▼(開)</p>
             <p id="toggle-content" style="display: none;">{{ $game->memo }}</p>

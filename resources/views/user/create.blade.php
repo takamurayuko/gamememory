@@ -60,6 +60,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-md-2">プレイ時間</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="play_time" value="{{ old('title') }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-md-2">ＵＲＬ</label>
                             <div class="col-md-10">
                                 <input type="text" class="form-control" name="url" value="{{ old('title') }}">
@@ -68,7 +74,7 @@
                         <div class="form-group row">
                             <label class="col-md-2">メモ</label>
                             <div class="col-md-10">
-                                <textarea class="form-control" name="memo" rows="20">{{ old('body') }}</textarea>
+                                <textarea class="form-control" name="memo" rows="20">{{ old('title') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group row">

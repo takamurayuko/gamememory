@@ -53,9 +53,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                    <label class="col-md-2" for="title">プレイ開始日</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="start_date" value="{{ old('start_date', $game_form->start_date) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="title">プレイ終了日</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="end_date" value="{{ $game_form->end_date }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="title">プレイ時間</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="play_time" value="{{ $game_form->end_date }}">
                         </div>
                     </div>
                     <div class="form-group row">

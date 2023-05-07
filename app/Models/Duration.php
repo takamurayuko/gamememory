@@ -15,9 +15,9 @@ class Duration extends Model
         'play_time',
     ];
     
-        public function games()
+        public function game()
     {
-        return $this->hasMany(Game::class);
+        return $this->hasOne(Game::class);
     }
     
 }
