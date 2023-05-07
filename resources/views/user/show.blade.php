@@ -17,6 +17,11 @@
             <p id="toggle-button">メモ▼(開)</p>
             <p id="toggle-content" style="display: none;">{{ $game->memo }}</p>
             <a href="{{ route('user.edit', ['id' => $game->id]) }}" class="edit-button">編集</a>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form').submit();" class="delete-button">削除</a>
+            <form action="{{ route('user.destroy', ['id' => $game->id]) }}" method="post" style="display:inline" id="delete-form">
+                @csrf
+                @method('DELETE')
+            </form>
         </div>
     </div>
     

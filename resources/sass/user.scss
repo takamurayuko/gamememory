@@ -14,6 +14,7 @@ body {
 
 .navbar-brand {
   color: #000 !important;
+  margin-left: -21px;
 }
 
 .nav-link {
@@ -118,17 +119,6 @@ select.form-control {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-// .sidebar ul li:not(:first-child) a {
-//   display: block;
-//   height: 100%;
-//   width: 100%;
-//   line-height: 65px;
-//   font-size: 18px;
-//   color: #fff;
-//   padding-left: 30px;
-//   transition: 0.4s;
-// }
-
 .sidebar {
   position: fixed;
   /* left: 0; */
@@ -139,23 +129,6 @@ select.form-control {
   transition: all 0.5s;
   margin-top: 0;
 }
-
-// .sidebar ul a {
-//   display: block;
-//   height: 100%;
-//   width: 100%;
-//   line-height: 65px;
-//   font-size: 18px;
-//   color: #fff;
-//   padding-left: 0px;
-//   // border-top: 1px solid rgba(255, 255, 255, 0.1);
-//   // border-bottom: 1px solid black;
-//   transition: 0.4s;
-// }
-
-// ul li:hover a {
-//   padding-left: 30px;
-// }
 
 .sidebar ul a i {
   margin-right: 16px;
@@ -217,10 +190,6 @@ section {
   transition: all 0.5s;
 }
 
-// .sidebar ul li:not(:first-child) a:hover {
-//   padding-left: 30px;
-// }
-
 .register {
   background-color: #3c6fc9;
   color: white;
@@ -238,10 +207,6 @@ section {
 .register a {
   color: white;
 }
-
-// .register a:hover {
-//   text-decoration: underline;
-// }
 
 .register:before {
   content: '';
@@ -349,4 +314,15 @@ section {
   text-align: center;
   margin-top: 10px;
   float: right;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 175px;
+  cursor: pointer;
+  border-radius: 5px;
 }

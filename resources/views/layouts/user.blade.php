@@ -38,9 +38,12 @@
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
+
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Gamememory') }}
+                        <img src="{{ secure_asset('storage/image/透過ロゴ.png') }}" alt="{{ config('app.name', 'Gamememory') }}" style="max-height: 19px;">
                     </a>
+                     
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -60,10 +63,9 @@
                         {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
-                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                 </a>
-
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -85,11 +87,13 @@
             {{-- ここまでナビゲーションバー --}}
             <!--ここからメニュー-->
              <!-- toggle section -->
+             
             <input type="checkbox" id="check" />
             <label for="check">
               <i class="fas fa-bars" id="btn"></i>
               <i class="fas fa-times" id="cancel"></i>
             </label>
+            
             <!-- sidebar section -->
             <div class="sidebar">
                 <div class="register">

@@ -151,7 +151,7 @@ class GameController extends Controller
         return redirect('/');
     }
 
-    public function delete(Request $request)
+    public function destroy(Request $request)
     {
         // 該当する Modelを取得
         $game = Game::find($request->id);
@@ -159,7 +159,7 @@ class GameController extends Controller
         // 削除する
         $game->delete();
 
-        return redirect('/create');
+        return redirect('/');
     }
     
     public function show($id)
