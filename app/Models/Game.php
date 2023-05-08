@@ -40,4 +40,24 @@ class Game extends Model
         return $this->belongsTo(Duration::class);
     }
     
+
+    public function start_date($default_value = '')
+    {
+        return ($this->duration->start_date != '' ? $this->duration->start_date : $default_value);
+    }
+    
+    public function end_date($default_value = '')
+    {
+        return ($this->duration->end_date != '' ? $this->duration->end_date : $default_value);
+    }
+    
+    public function play_time($default_value = '')
+    {
+        return ($this->duration->play_time != '' ? $this->duration->play_time : $default_value); 
+    }
+    
+     public function url($default_value = '')
+    {
+        return ($this->duration->url != '' ? $this->duration->url : $default_value); 
+    }
 }
