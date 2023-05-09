@@ -26,7 +26,7 @@
                             <select class="form-control" name="genre_name">
                                 <option value="">選択してください</option>
                                 @foreach (App\Models\Genre::$genre_list as $genre)
-                                    <option value="{{ $genre }}" {{ old('genre_name', $game_form->genre_name ?? '') == $genre ? 'selected' : '' }}>
+                                    <option value="{{ $genre }}" {{ old('genre_name', $game_form->genre->genre_name ?? '') == $genre ? 'selected' : '' }}>
                                         {{ $genre }}
                                     </option>
                                 @endforeach
@@ -39,7 +39,7 @@
                             <select name="platform_name" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach ($platforms as $platform)
-                                    <option value="{{ $platform }}" {{ $game_form->platform_name == $platform ? 'selected' : '' }}>
+                                    <option value="{{ $platform }}" {{ old('platform_name', $game_form->platform->machine_name ?? '') == $platform ? 'selected' : '' }}>
                                         {{ $platform }}
                                     </option>
                                 @endforeach
