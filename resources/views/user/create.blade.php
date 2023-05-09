@@ -22,11 +22,11 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">ジャンル</label>
+                        <label class="col-md-2">ジャンル(必須)</label>
                             <div class="col-md-10">
                                 <select name="genre_name" class="form-control">
+                                    @foreach ($genres as $genre)
                                     <option value="">選択してください</option>
-                                    @foreach (App\Models\Genre::$genre_list as $genre)
                                         <option value="{{ $genre }}" {{ old('genre_name') == $genre ? 'selected' : '' }}>
                                             {{ $genre }}
                                         </option>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                        <label class="col-md-2">機種</label>
+                        <label class="col-md-2">機種(必須)</label>
                             <div class="col-md-10">
                                 <select name="platform_name" class="form-control">
                                     <option value="">選択してください</option>

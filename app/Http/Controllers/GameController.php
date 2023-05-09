@@ -110,9 +110,21 @@ class GameController extends Controller
         $game = Game::find($request->id);
         // 送信されてきたフォームデータを格納する
         $game_form = $request->all();
+        
+        // genreを更新する
+        $genre = Genre::find($game->genre_id);
+        $genre->genre_name = $game_form['genre_name'];
+        $genre->save();
+        
+        // platformを更新する
+        $platform = Platform::find($game->platform_id);
+        $platform->machine_name = $game_form['platform_name'];
+        $platform->save();
 
         // durationを更新する
         $duration = Duration::find($game->duration_id);
+        
+        $game->url = $game_form['url'];
        
        if (!$duration) {
             $duration = new Duration;
