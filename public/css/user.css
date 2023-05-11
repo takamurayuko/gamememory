@@ -14,7 +14,7 @@ body {
 
 .navbar-brand {
   color: #000 !important;
-  margin-left: -21px;
+  margin-left: -37px;
 }
 
 .nav-link {
@@ -78,7 +78,7 @@ body {
 
 label {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: -1rem;
   font-weight: 600;
 }
 
@@ -225,7 +225,7 @@ section {
   border-radius: 10px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: -15px;
   margin-left: 10px;
   margin-right: 35px;
   position: relative;
@@ -239,7 +239,7 @@ section {
   border-radius: 10px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: -15px;
   margin-left: 10px;
   margin-right: 35px;
   position: relative;
@@ -323,4 +323,24 @@ section {
   margin-left: 175px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.search-button {
+  position: absolute;
+  right: 18px;
+  top: 0;
+  border: none;
+  background: none;
+  padding: 10px;
+  color: #606060;
 }

@@ -34,13 +34,19 @@ class GameController extends Controller
         $duration->play_time = $form['play_time'];
         $duration->save();
     
-        $genre = new Genre;
-        $genre->genre_name = $form['genre_name'];
-        $genre->save();
+        // $genre = new Genre;
+        // $genre->genre_name = $form['genre_name'];
+        // $genre->save();
+        
+        // 選択されたジャンル名から既存のジャンルを検索する
+    $genre = Genre::where('genre_name', $form['genre_name'])->first();
+
+    // 選択されたプラットフォーム名から既存のプラットフォームを検索する
+    $platform = Platform::where('machine_name', $form['platform_name'])->first();
     
-        $platform = new Platform;
-        $platform->machine_name = $form['platform_name'];
-        $platform->save();
+        // $platform = new Platform;
+        // $platform->machine_name = $form['platform_name'];
+        // $platform->save();
         
 
         // フォームから画像が送信されてきたら、保存して、$games->image_path に画像のパスを保存する
@@ -60,6 +66,7 @@ class GameController extends Controller
         unset($form['end_date']);
         unset($form['play_time']);
         unset($form['platform_name']);
+        unset($form['genre_name']);
         
         //dd($form);
 
@@ -182,7 +189,21 @@ class GameController extends Controller
         }
         return view('user.show', compact('game'));
     }
-
+    
+    public function index(Request $request)
+    {
+        //dd($request->keyword);
+        $keyword = $request->keyword;
+        $query = Game::query();
+        
+        if ($keyword != '') {
+            // キーワードが入力されたら部分一致の検索結果を取得する
+            $query->where('title', 'LIKE', "%{$keyword}%");
+        } 
+         $games = $query->orderBy('created_at', 'desc')->get();
+        
+    return view('user.index', ['games' => $games, 'keyword' => $keyword]);
+    }
 }
     
 

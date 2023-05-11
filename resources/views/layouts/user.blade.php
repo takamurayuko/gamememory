@@ -101,7 +101,14 @@
                 </div>
                 <ul>
                     <li>
-                        <input type="text" placeholder="タイトル検索">
+                        <div class="search-box">
+                            <form id="search-form" action="{{ route('user.index') }}" method="GET">
+                                <input type="text" name="keyword" value="{{ old('keyword', '') }}" placeholder="タイトル検索" class="search-input">
+                            </form>
+                            <button type="button" class="search-button" onclick="document.getElementById('search-form').submit();">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </li>     
                     <li>
                         <div class="genre">ジャンル</div>

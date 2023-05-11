@@ -8,16 +8,22 @@
 @section('content')
     <div class="container_game">
         <div class="game-grid">
-            @foreach ($games as $game)
-                <div class="game-card">
-                    <a href="{{ route('user.show', ['id' => $game->id]) }}">
-                        <img src="{{ $game->image_path ? secure_asset('storage/image/'. $game->image_path) : secure_asset('storage/image/no_image.png') }}" alt="{{ $game->title }}" style="width: 350px; height: 350px;">
-                    </a>
-                    <a href="{{ route('user.show', ['id' => $game->id]) }}">
-                        <h4>{{ $game->title }}</h4>
-                    </a>
-                </div>
-            @endforeach
+            @if (isset($games))
+                @if (count($games) > 0)
+                    @foreach ($games as $game)
+                        <div class="game-card">
+                            <a href="{{ route('user.show', ['id' => $game->id]) }}">
+                                <img src="{{ $game->image_path ? secure_asset('storage/image/'. $game->image_path) : secure_asset('storage/image/no_image.png') }}" alt="{{ $game->title }}" style="width: 330px; height: 330px;">
+                            </a>
+                            <a href="{{ route('user.show', ['id' => $game->id]) }}">
+                                <h4>{{ $game->title }}</h4>
+                            </a>
+                        </div>
+                    @endforeach
+                @else
+                    <p>該当するゲームは見つかりませんでした。</p>
+                @endif
+            @endif
         </div>
     </div>
 @endsection

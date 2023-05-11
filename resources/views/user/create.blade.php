@@ -25,8 +25,8 @@
                         <label class="col-md-2">ジャンル(必須)</label>
                             <div class="col-md-10">
                                 <select name="genre_name" class="form-control">
-                                    @foreach ($genres as $genre)
                                     <option value="">選択してください</option>
+                                    @foreach (App\Models\Genre::$genre_list as $genre)
                                         <option value="{{ $genre }}" {{ old('genre_name') == $genre ? 'selected' : '' }}>
                                             {{ $genre }}
                                         </option>
