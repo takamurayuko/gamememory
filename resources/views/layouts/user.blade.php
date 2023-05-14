@@ -40,7 +40,7 @@
                 <div class="container">
 
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ secure_asset('storage/image/透過ロゴ.png') }}" alt="{{ config('app.name', 'Gamememory') }}" style="max-height: 19px;">
+                        <img src="{{ secure_asset('storage/image/logo.png') }}" alt="{{ config('app.name', 'Gamememory') }}" style="max-height: 19px;">
                     </a>
                      
 
