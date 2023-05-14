@@ -23,11 +23,11 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="genre_name">ジャンル</label>
                         <div class="col-md-10">
-                            <select class="form-control" name="genre_name">
+                            <select class="form-control" name="genre_id">
                                 <option value="">選択してください</option>
-                                @foreach (App\Models\Genre::$genre_list as $genre)
-                                    <option value="{{ $genre }}" {{ old('genre_name', $game_form->genre->genre_name ?? '') == $genre ? 'selected' : '' }}>
-                                        {{ $genre }}
+                                @foreach ($genres as $genre)
+                                    <option value="{{ $genre->id }}" {{ old('genre_id', $game_form->genre_id ?? '') == $genre->id ? 'selected' : '' }}>
+                                        {{ $genre->genre_name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -36,11 +36,11 @@
                     <div class="form-group row">
                     <label class="col-md-2">機種</label>
                         <div class="col-md-10">
-                            <select name="platform_name" class="form-control">
+                            <select class="form-control" name="platform_id" >
                                 <option value="">選択してください</option>
                                 @foreach ($platforms as $platform)
-                                    <option value="{{ $platform }}" {{ old('platform_name', $game_form->platform->machine_name ?? '') == $platform ? 'selected' : '' }}>
-                                        {{ $platform }}
+                                    <option value="{{ $platform->id }}" {{ old('platform_id', $game_form->platform_id ?? '') == $platform->id ? 'selected' : '' }}>
+                                        {{ $platform->machine_name }}
                                     </option>
                                 @endforeach
                             </select>

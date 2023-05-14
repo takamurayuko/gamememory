@@ -4,10 +4,11 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use App\Models\Genre;
 
 
-class GenreSeeder extends Seeder
+class GenresSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +23,7 @@ class GenreSeeder extends Seeder
         ];
 
     foreach ($genres as $genre) {
-        Genre::create(['genre_name' => $genre]);
+        DB::table('genres')->insert(['genre_name' => $genre]);
         }
     }
 }

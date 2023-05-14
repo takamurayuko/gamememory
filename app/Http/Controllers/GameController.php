@@ -14,7 +14,7 @@ class GameController extends Controller
      public function add()
     {
         $genres = Genre::all();
-        $platforms = Platform::$platform_list;
+        $platforms = Platform::all();
         
         return view('user.create', compact('genres', 'platforms'));
     }
@@ -39,10 +39,10 @@ class GameController extends Controller
         // $genre->save();
         
         // 選択されたジャンル名から既存のジャンルを検索する
-    $genre = Genre::where('genre_name', $form['genre_name'])->first();
+    $genre = Genre::where('genre_name', $form['genre_id'])->first();
 
     // 選択されたプラットフォーム名から既存のプラットフォームを検索する
-    $platform = Platform::where('machine_name', $form['platform_name'])->first();
+    $platform = Platform::where('machine_name', $form['platform_id'])->first();
     
         // $platform = new Platform;
         // $platform->machine_name = $form['platform_name'];
@@ -76,8 +76,8 @@ class GameController extends Controller
         //dd($form);
         $game->url = $form['url'];
         $game->memo = $form['memo'];
-        $game->platform_id = $platform->id;
-        $game->genre_id = $genre->id;
+        $game->platform_id = $form['platform_id'];
+        $game->genre_id = $form['genre_id'];
         $game->duration_id = $duration->id; 
         $game->user_id = \Auth::id();
         
@@ -104,7 +104,7 @@ class GameController extends Controller
         }
         
         $genres = Genre::all(); // ジャンルデータ取得
-        $platforms = Platform::$platform_list;//機種データ取得        
+        $platforms = Platform::all();//機種データ取得        
 
         return view('user.edit', ['game_form' => $game_form, 'genres' => $genres, 'platforms' => $platforms]);
     }    
