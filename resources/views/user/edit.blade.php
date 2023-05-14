@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="genre_name">ジャンル</label>
+                        <label class="col-md-2" for="genre_id">ジャンル</label>
                         <div class="col-md-10">
                             <select class="form-control" name="genre_id">
                                 <option value="">選択してください</option>

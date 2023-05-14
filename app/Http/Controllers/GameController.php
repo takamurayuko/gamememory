@@ -76,8 +76,8 @@ class GameController extends Controller
         //dd($form);
         $game->url = $form['url'];
         $game->memo = $form['memo'];
-        $game->platform_id = $form['platform_id'];
-        $game->genre_id = $form['genre_id'];
+        $game->platform_id = $platform->id;
+        $game->genre_id = $genre->id;
         $game->duration_id = $duration->id; 
         $game->user_id = \Auth::id();
         
@@ -118,15 +118,13 @@ class GameController extends Controller
         // 送信されてきたフォームデータを格納する
         $game_form = $request->all();
         
-        // genreを更新する
-        $genre = Genre::find($game->genre_id);
-        $genre->genre_name = $game_form['genre_name'];
-        $genre->save();
+        // ゲームのジャンルidを更新
+        $game->genre_id = $game_form['genre_id'];
+        $game->save();
         
-        // platformを更新する
-        $platform = Platform::find($game->platform_id);
-        $platform->machine_name = $game_form['platform_name'];
-        $platform->save();
+        // ゲームのプラットフォームidを更新
+        $game->platform_id = $game_form['platform_id'];
+        $game->save();
 
         // durationを更新する
         $duration = Duration::find($game->duration_id);
