@@ -29,6 +29,9 @@ Route::middleware('auth')->group(function() {
     Route::post('/edit', [GameController::class, 'update'])->name('user.update'); //編集処理
     Route::get('/show/{id}', [GameController::class, 'show'])->name('user.show'); //詳細画面
     Route::delete('/delete', [GameController::class, 'destroy'])->name('user.destroy'); // 削除処理
+    Route::get('/games/genre/{genre}', [GameController::class, 'showGamesByGenre'])->name('games.genre');
+    Route::get('/games/platform/{platform}', [GameController::class, 'showGamesByPlatform'])->name('games.platform');
+
 });
 
 Auth::routes();

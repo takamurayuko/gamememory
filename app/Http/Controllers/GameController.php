@@ -39,11 +39,12 @@ class GameController extends Controller
         // $genre->save();
         
         // 選択されたジャンル名から既存のジャンルを検索する
-    $genre = Genre::where('genre_name', $form['genre_id'])->first();
+    $genre = Genre::find($form['genre_id']);
 
     // 選択されたプラットフォーム名から既存のプラットフォームを検索する
-    $platform = Platform::where('machine_name', $form['platform_id'])->first();
+    $platform = Platform::find($form['platform_id']);
     
+    //dd($genre, $platform);
         // $platform = new Platform;
         // $platform->machine_name = $form['platform_name'];
         // $platform->save();
@@ -194,14 +195,45 @@ class GameController extends Controller
         $keyword = $request->keyword;
         $query = Game::query();
         
+        
         if ($keyword != '') {
             // キーワードが入力されたら部分一致の検索結果を取得する
             $query->where('title', 'LIKE', "%{$keyword}%");
         } 
-         $games = $query->orderBy('created_at', 'desc')->get();
+            $games = $query->orderBy('created_at', 'desc')->get();
+            $genres = Genre::all();
+            $platforms = Platform::all();
         
-    return view('user.index', ['games' => $games, 'keyword' => $keyword]);
+    return view('user.index', ['games' => $games, 'keyword' => $keyword, 'genres' => $genres, 'platforms' => $platforms]);
     }
+    
+    public function showGamesByGenre($genreName)
+    {
+        $genre = Genre::where('genre_name', $genreName)->first();
+        
+        if (!$genre) {
+            abort(404);
+        }
+    
+        $games = $genre->games;
+    
+        return view('user.index', ['games' => $games]);
+    }
+
+    public function showGamesByPlatform($platformName)
+    {
+        $platform = Platform::where('machine_name', $platformName)->first();
+        
+        if (!$platform) {
+            abort(404);
+        }
+    
+        $games = $platform->games;
+    
+        return view('user.index', ['games' => $games]);
+    }
+
+
 }
     
 

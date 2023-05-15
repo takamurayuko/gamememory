@@ -115,31 +115,31 @@
                     </li>
                     <div class="genre_name a">
                         <li>
-                            <a href="#">ＲＰＧ</a>
+                            <a href="{{ url('/games/genre/RPG') }}">RPG</a>
                         </li>
                         <li>
-                            <a href="#">アクション</a>
+                            <a href="{{ url('/games/genre/アクション') }}">アクション</a>
                         </li>
                         <li>
-                            <a href="#">シミュレーション</a>
+                            <a href="{{ url('/games/genre/シミュレーション') }}">シミュレーション</a>
                         </li>
                         <li>
-                            <a href="#">アドベンチャー</a>
+                            <a href="{{ url('/games/genre/アドベンチャー') }}">アドベンチャー</a>
                         </li>
                         <li>
-                            <a href="#">シューティング</a>
+                            <a href="{{ url('/games/genre/シューティング') }}">シューティング</a>
                         </li>
                         <li>
-                            <a href="#">レーシング</a>
+                            <a href="{{ url('/games/genre/レーシング') }}">レーシング</a>
                         </li>
                         <li>
-                            <a href="#">パズル</a>
+                            <a href="{{ url('/games/genre/パズル') }}">パズル</a>
                         </li>
                         <li>
-                            <a href="#">音楽</a>
+                            <a href="{{ url('/games/genre/音楽') }}">音楽</a>
                         </li>
                         <li>
-                            <a href="#">その他</a>
+                            <a href="{{ url('/games/genre/その他') }}">その他</a>
                         </li>
                     </div> 
                     
@@ -148,19 +148,19 @@
                     </li>
                     <div class="genre_name a">
                         <li>
-                            <a href="#">Nintendo Swich</a>
+                            <a href="{{ url('/games/platform/NintendoSwitch') }}">Nintendo Switch</a>
                         </li>
                         <li>
-                            <a href="#">ＰＳ４/ＰＳ５</a>
+                            <a href="{{ url('/games/platform/ＰＳ４ＰＳ５') }}">ＰＳ４/ＰＳ５</a>
                         </li>
                         <li>
-                            <a href="#">Ｘｂｏｘ</a>
+                            <a href="{{ url('/games/platform/Ｘｂｏｘ') }}">Ｘｂｏｘ</a>
                         </li>
                         <li>
-                            <a href="#">ＰＣ</a>
+                            <a href="{{ url('/games/platform/ＰＣ') }}">ＰＣ</a>
                         </li>
                         <li>
-                            <a href="#">その他</a>
+                            <a href="{{ url('/games/platform/その他') }}">その他</a>
                         </li>
                     </div>    
                 </ul>

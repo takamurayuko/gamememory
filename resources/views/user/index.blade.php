@@ -21,7 +21,7 @@
                         </div>
                     @endforeach
                 @else
-                    <p>該当するゲームは見つかりませんでした。</p>
+                    <p>該当する投稿は見つかりませんでした。</p>
                 @endif
             @endif
         </div>

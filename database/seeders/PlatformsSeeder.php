@@ -16,7 +16,7 @@ class PlatformsSeeder extends Seeder
     public function run()
     {
          $platforms = [
-        'Nintendo Swich', 'ＰＳ４/ＰＳ５', 'Ｘｂｏｘ', 'ＰＣ', 'その他' ];
+        'NintendoSwitch', 'ＰＳ４ＰＳ５', 'Ｘｂｏｘ', 'ＰＣ', 'その他' ];
 
     foreach ($platforms as $platform) {
         DB::table('platforms')->insert(['machine_name' => $platform]);
