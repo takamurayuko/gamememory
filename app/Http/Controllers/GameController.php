@@ -33,21 +33,13 @@ class GameController extends Controller
         $duration->end_date = $form['end_date'];
         $duration->play_time = $form['play_time'];
         $duration->save();
-    
-        // $genre = new Genre;
-        // $genre->genre_name = $form['genre_name'];
-        // $genre->save();
+
         
         // 選択されたジャンル名から既存のジャンルを検索する
-    $genre = Genre::find($form['genre_id']);
+        $genre = Genre::find($form['genre_id']);
 
-    // 選択されたプラットフォーム名から既存のプラットフォームを検索する
-    $platform = Platform::find($form['platform_id']);
-    
-    //dd($genre, $platform);
-        // $platform = new Platform;
-        // $platform->machine_name = $form['platform_name'];
-        // $platform->save();
+        // 選択されたプラットフォーム名から既存のプラットフォームを検索する
+        $platform = Platform::find($form['platform_id']);
         
 
         // フォームから画像が送信されてきたら、保存して、$games->image_path に画像のパスを保存する
@@ -58,23 +50,18 @@ class GameController extends Controller
             $game->image_path = null;
         }
 
-        // フォームから送信されてきた_tokenを削除する
+        // フォームから送信されてきた_token等を削除する
         unset($form['_token']);
-        // フォームから送信されてきたimageを削除する
         unset($form['image']);
-         // start_dateとend_dateを削除する
         unset($form['start_date']);
         unset($form['end_date']);
         unset($form['play_time']);
         unset($form['platform_name']);
         unset($form['genre_name']);
-        
-        //dd($form);
 
         // データベースに保存する
         $game->fill($form);
-        //dd($game);
-        //dd($form);
+        
         $game->url = $form['url'];
         $game->memo = $form['memo'];
         $game->platform_id = $platform->id;
@@ -82,8 +69,7 @@ class GameController extends Controller
         $game->duration_id = $duration->id; 
         $game->user_id = \Auth::id();
         
-        
-        //dd($game);
+
         $game->save();
 
         return redirect('/');
@@ -143,7 +129,10 @@ class GameController extends Controller
         $duration->end_date = $game_form['end_date'];
         $duration->play_time = $game_form['play_time'];
         $duration->save();
-           
+        
+        
+        $game->memo = $game_form['memo'];
+
        
         //画像処理
         if ($request->remove == 'true') {
