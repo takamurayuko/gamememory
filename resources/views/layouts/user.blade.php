@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSRF Token -->
-         {{-- 後の章で説明します --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
@@ -49,14 +48,14 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                         <!--Left Side Of Navbar -->
+                        <!--Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                         </ul>
 
-                         <!--Right Side Of Navbar -->
+                        <!--Right Side Of Navbar -->
                         <ul class="navbar-nav">
                                {{-- 以下を追記 --}}
-                         <!--Authentication Links -->
+                        <!--Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
@@ -84,7 +83,6 @@
                     </div>
                 </div>
             </nav>
-            {{-- ここまでナビゲーションバー --}}
             <!--ここからメニュー-->
              <!-- toggle section -->
              

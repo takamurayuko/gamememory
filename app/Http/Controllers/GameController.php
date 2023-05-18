@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-     public function add()
+    public function add()
     {
         $genres = Genre::all();
         $platforms = Platform::all();
@@ -69,7 +69,6 @@ class GameController extends Controller
         $game->duration_id = $duration->id; 
         $game->user_id = \Auth::id();
         
-
         $game->save();
 
         return redirect('/');
@@ -82,7 +81,7 @@ class GameController extends Controller
         return view('path.to.your.create.view', compact('genres'));
     }
     
-     public function edit(Request $request)
+    public function edit(Request $request)
     {
         // Game Modelからデータを取得する
         $game_form = Game::find($request->id);
@@ -118,7 +117,7 @@ class GameController extends Controller
         
         $game->url = $game_form['url'];
        
-       if (!$duration) {
+        if (!$duration) {
             $duration = new Duration;
             $duration->save();
             $game->duration_id = $duration->id;

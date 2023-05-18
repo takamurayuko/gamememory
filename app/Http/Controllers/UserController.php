@@ -10,9 +10,13 @@ class UserController extends Controller
     //トップページに繋がる
     public function index()
     {
-        $games = Game::orderBy('created_at', 'desc')->get();
+        // ログイン中のユーザーIDを表示
+    dd(auth()->user()->id);
+        
+        $games = auth()->user()->games()->orderBy('created_at', 'desc')->get();
     
         return view('user.index', compact('games'));
     }
+    
     
 }
