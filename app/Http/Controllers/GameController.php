@@ -181,8 +181,7 @@ class GameController extends Controller
     {
         $keyword = $request->keyword;
         
-        $query = auth()->user()->games();
-        
+        $query = Game::query()->where('user_id', auth()->id()); 
         
         if ($keyword != '') {
             // キーワードが入力されたら部分一致の検索結果を取得する
@@ -203,7 +202,7 @@ class GameController extends Controller
             abort(404);
         }
     
-        $games = $genre->games;
+        $games = $genre->games()->where('user_id', auth()->id())->get();
     
         return view('user.index', ['games' => $games]);
     }
@@ -216,7 +215,7 @@ class GameController extends Controller
             abort(404);
         }
     
-        $games = $platform->games;
+        $games = $platform->games()->where('user_id', auth()->id())->get();
     
         return view('user.index', ['games' => $games]);
     }
