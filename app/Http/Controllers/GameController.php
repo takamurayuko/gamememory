@@ -179,9 +179,9 @@ class GameController extends Controller
     
     public function index(Request $request)
     {
-        //dd($request->keyword);
         $keyword = $request->keyword;
-        $query = Game::query();
+        
+        $query = auth()->user()->games();
         
         
         if ($keyword != '') {
